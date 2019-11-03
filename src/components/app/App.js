@@ -7,6 +7,7 @@ import Footer from '../component/Footer';
 import Login from '../component/Login';
 import Landing from '../component/Landing';
 import Review from '../component/Review';
+import Stories from '../component/Stories';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
                 <Route path='/login' component={Login}></Route>
                 <Route path='/landing' component={Landing}></Route>
                 <Route path='/review' component={Review}></Route>
+                <Route path='/stories' component={Stories}></Route>
+
                </Switch>
             <Footer/>
         </BrowserRouter>
