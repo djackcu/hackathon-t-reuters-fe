@@ -26,7 +26,7 @@ function App() {
                 <Route exact path="/" component={Home}></Route>
                 <Route path='/login' component={Login}></Route>
                 <Route path='/landing' component={Landing}></Route>
-               </Switch>
+              </Switch>
             <Footer/>
         </BrowserRouter>
   );
