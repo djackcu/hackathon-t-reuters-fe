@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import profileimg from '../images/profile.jpg'
+import profileimg from '../images/profile.jpg';
+import {withRouter} from 'react-router-dom';
 
 class Landing extends Component {
 
@@ -34,9 +35,13 @@ class Landing extends Component {
         }
     ];
 
+    handleClickAdd = (e)=>{
+        this.props.history.push("/review");
+    }
+
             render(){
     return (
-        <div className="hero-body" style={{ height: '480px' }}>
+        <div className="hero-body" style={{ height: '500px' }}>
             <h1 className="subtitle">Welcome User!</h1>
             <div className="columns">
 
@@ -46,9 +51,9 @@ class Landing extends Component {
                    <figure className="image" >
                        <img src={ profileimg } alt="Profile" style={{height:'150px',width:'100px'}} />
                    </figure>
-                   <div class="media-content">
-                       <p class="title is-4">{emp.title}</p>
-                       <p class="subtitle is-6">{emp.subtitle}</p>
+                   <div className="media-content">
+                       <p className="title is-4">{emp.title}</p>
+                       <p className="subtitle is-6">{emp.subtitle}</p>
                    </div>
                </div>  
                <div className="content">
@@ -58,7 +63,7 @@ class Landing extends Component {
                </div>
                <footer class="card-footer is-centered">
                    <button className="button card-footer-item is-primary"  onClick={ this.handleClick } >View</button>
-                   <button className="button card-footer-item is-primary" onClick={ this.handleClick } >Add</button>
+                   <button className="button card-footer-item is-primary" onClick={ this.handleClickadd } >Add</button>
                </footer>  
            </div>
 
@@ -70,4 +75,4 @@ class Landing extends Component {
             )
         }
     }
-export default Landing;
+export default withRouter(Landing);

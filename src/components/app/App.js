@@ -6,6 +6,7 @@ import Header from '../component/Header';
 import Footer from '../component/Footer';
 import Login from '../component/Login';
 import Landing from '../component/Landing';
+import Review from '../component/Review';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 <Route exact path="/" component={Home}></Route>
                 <Route path='/login' component={Login}></Route>
                 <Route path='/landing' component={Landing}></Route>
+                <Route path='/review' component={Review}></Route>
                </Switch>
             <Footer/>
         </BrowserRouter>
