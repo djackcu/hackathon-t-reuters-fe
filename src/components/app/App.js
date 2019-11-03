@@ -3,10 +3,13 @@ import './App.css';
 import useApp from './useApp';
 
 function App() {
-  const {employers} = useApp();
+  
+  const {query,employerFiltered,handlerFilter} = useApp()
   return (
     <div className="App">
-      {employers.map(emp =>(<div key={emp.name}>{emp.name}</div>))}
+      <input type="text" value={query} onChange={(e)=>handlerFilter(e)}></input>
+
+      {employerFiltered.map(emp =>(<div key={emp.name}>{emp.name}</div>))}
     </div>
   );
 }
