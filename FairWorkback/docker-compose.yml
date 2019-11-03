@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - '8000:80'
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - static-files:/static-files/
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - '4777:5432'
+    environment:
+      POSTGRES_DATABASE: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+        - postgres:/var/lib/postgresql/data
+
+  app:
+    image: registry.gitlab.com/mociunasignas/storygood-backend/django-docker
+    command: 'sh /app/scripts/run.sh'
+    restart: always
+    depends_on:
+      - postgres
+    volumes:
+      - ./app:/app
+      - static-files:/static-files/
+
+volumes:
+  app:
+  postgres:
+  static-files:
+  media-files:
