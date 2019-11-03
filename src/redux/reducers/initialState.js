@@ -1,3 +1,15 @@
 export default {
-	employers            : [{name:'ItaFarm',description:'Italian Farmer',reviews:[]}, {name:'FrenchFarm',description:'French Farmer',reviews:[]}]
+	isAuth:false,
+	employers: [
+		{
+			name:'ItalianFarm',
+			description:'Italian Farmer',
+			reviews:[]
+		},
+		{
+			name:'FrenchFarm',
+			description:'French Farmer',
+			reviews:[]
+		}],
+	filteredEmployers:[]
 };
