@@ -7,7 +7,7 @@ function Home() {
         <div>
             <div className="tile">
                 <div className="tile is-parent">
-                    <img src={HomeImg} alt="Slavery" style={{ height: '521px' }} />
+                    <img src={HomeImg} alt="Slavery" style={{ height: '500px' }} />
                 </div>
                 <div className="tile is-3 is-vertical is-parent">
                     <div className="tile is-child box">
